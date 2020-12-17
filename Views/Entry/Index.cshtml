@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Entry>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h2>Thông tin đơn hàng</h2>
+
+<a asp-action="CreateEntry" asp-controller="Entry" class="btn btn-primary"><i class="fa fa-plus-square"></i>Thêm đơn hàng</a>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Tên đơn hàng</th>
+            <th scope="col">Tài xế</th>
+            <th scope="col">Ngày tạo đơn</th>
+            <th scope="col">Ngày đơn hàng đi</th>
+            <th scope="col">Ngày giao hàng</th>
+            <th scope="col">Đơn giá</th>
+            <th scope="col">Đia chỉ</th>
+            <th scope="col">Cân nặng</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Trạng thái</th>
+            <th scope="col">Ghi chú</th>
+        </tr>
+    </thead>
+
+    @foreach (var user in Model)
+    {
+<tr>
+    <td>@user.Order_Name</td>
+    <td>@user.Driver?.First_Name</td>
+    <td>@user.Shipper?.First_Name</td>
+    <td>@user.Customer.First_Name</td>
+    <td>@user.Consignee.First_Name</td>
+    <td>@user.Order_Date</td>
+    <td>@user.Pick_Up_Date</td>
+    <td>@user.Delivery_Date</td>
+    <td>@user.Order_Price</td>
+    <td>@user.Address, @user.City, @user.State</td>
+    <td>@user.Weight</td>
+    <td>@user.Quantity</td>
+    <td>@user.Order_Status</td>
+    <td>@user.Notes</td>
+    <td>
+        <a asp-action="EditEntry" asp-controller="Entry" asp-route-id="@user.Id" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+        <a asp-action="DeleteEntryInfo" asp-controller="Entry" asp-route-id="@user.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+    </td>
+</tr>
+    }
+</table>

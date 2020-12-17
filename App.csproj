@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+    <PackageReference Include="font-awesome" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\DbContexts\" />
+    <Folder Include="Repositories\Interfaces\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Components\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Header\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Views\Driver\" />
+    <Folder Include="wwwroot\lib\snackbar\" />
+    <Folder Include="Views\Shipper\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Consignee\" />
+    <Folder Include="Views\Entry\" />
+    <Folder Include="Repositories\MockInterFaces\" />
+  </ItemGroup>
+</Project>

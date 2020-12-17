@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Consignee>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h2>Thông tin người nhận hàng</h2>
+
+<a asp-action="CreateConsignee" asp-controller="Consignee" class="btn btn-primary"><i class="fa fa-plus-square"></i>Thêm thông tin người nhận hàng</a>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Họ và Tên</th>
+            <th scope="col">Giới tính</th>
+            <th scope="col">Email</th>
+            <th scope="col">Điện thoại</th>
+            <th scope="col">Ngày sinh</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col">Chi chú</th>
+            <th scope="col">Hành động</th>
+        </tr>
+    </thead>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Last_Name @user.First_Name</td>
+            <td>@user.Gender</td>
+            <td>@user.Email</td>
+            <td>@user.PhoneNumber</td>
+            <td>@user.Date_Of_Birth</td>
+            <td>@user.Address, @user.City, @user.State</td>
+            <td>@user.Notes</td>
+            <td>
+                <a asp-action="EditConsignee" asp-controller="Consignee" asp-route-id="@user.Id" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                <a asp-action="DeleteConsigneeInfo" asp-controller="Consignee" asp-route-id="@user.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+</table>

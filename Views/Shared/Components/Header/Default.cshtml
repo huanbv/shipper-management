@@ -1,0 +1,14 @@
+﻿@model HeaderViewModel
+
+
+
+<li class="nav-item">
+    @if (Model.CurrentUser != null)
+    {
+        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Xin chào: @Model.CurrentUser.First_Name - Đăng xuất</a>
+    }
+    else
+    {
+        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+    }
+</li>

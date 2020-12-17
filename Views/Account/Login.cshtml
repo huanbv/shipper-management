@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+
+<div class="text-danger" asp-validation-summary="All"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Đăng nhập vào Quản lý Vận chuyển</h5>
+                    <form class="form-signin" asp-action="Login" method="post">
+                        <div class="form-label-group">
+                            <input type="email" class="form-control" placeholder="Email" asp-for="Email" />
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" class="form-control" placeholder="Password" asp-for="Password" />
+                        </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Đăng nhập</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
